@@ -50,6 +50,16 @@ class ViewController: UIViewController {
         myButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         myButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             ])
+        
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(shouldReload(notifcation:)), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+        
+        
+    }
+    
+    @objc func shouldReload(notifcation: NSNotification){
+        view.backgroundColor = UIColor.purple
     }
 }
 

@@ -27,6 +27,7 @@ class ViewController2: UIViewController {
     @objc func handleMyButton(_ sender: UIButton){
         view.backgroundColor =  colorSwitch % 2 == 0 ? UIColor.green : UIColor.yellow
         colorSwitch = colorSwitch + 1
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
     }
     
     
@@ -38,6 +39,11 @@ class ViewController2: UIViewController {
             myButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             myButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             ])
+        
+        
+        
+        
+        
     }
 }
 
